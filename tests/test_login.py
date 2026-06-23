@@ -12,3 +12,10 @@ def test_invalid_login(page):
     page.fill("#password", "secret_sauce_wrongPW")
     page.click("#login-button")
     assert page.locator("[data-test='error']").is_visible()
+
+def test_locked_out_user(page):
+    page.goto("https://www.saucedemo.com")
+    page.fill("#user-name", "locked_out_user")
+    page.fill("#password", "secret_sauce")
+    page.click("#login-button") 
+    assert page.locator("[data-test='error']").inner_text() == "Epic sadface: Sorry, this user has been locked out."    
