@@ -14,3 +14,9 @@ class InventoryPage:
     
     def is_dropdown_filter_visible(self):
         return self.page.locator("[data-test='product-sort-container']").is_visible()
+    
+    def click_add_to_cart_button(self, product_name):
+        self.page.locator(f"[data-test='add-to-cart-{product_name}']").click()
+
+    def get_cart_count(self):
+        return self.page.locator("[data-test='shopping-cart-badge']").inner_text()   
