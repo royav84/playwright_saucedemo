@@ -20,3 +20,9 @@ class InventoryPage:
 
     def get_cart_count(self):
         return self.page.locator("[data-test='shopping-cart-badge']").inner_text()   
+    
+    def get_product_list(self):
+        return self.page.locator("[data-test='inventory-item-name']").all_inner_texts()
+    
+    def select_filter_option(self, option_text):
+        self.page.select_option("[data-test='product-sort-container']", label=option_text)
