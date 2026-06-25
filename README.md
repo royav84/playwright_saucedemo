@@ -3,14 +3,18 @@
 Senior QA Engineer with 13+ years of experience. This repo contains UI automation tests built with Playwright and pytest against saucedemo.com.
 
 ## What's covered
-- Login flow — positive and negative cases
-- Inventory page validation
-- End-to-end purchase flow
+
+- Login flow — valid login, invalid credentials, locked out user
+- Inventory page — title, product count, filter visibility
+- Add to cart — cart badge validation
+- Product sorting — A to Z, Z to A filter validation
 
 ## Tech stack
+
 - Python
 - Playwright
 - pytest
+- Page Object Model (POM)
 
 ## How to run
 
@@ -24,3 +28,9 @@ Run all tests:
 ```bash
 pytest
 ```
+
+## Test structure
+
+- `pages/` — Page Object Model classes
+- `tests/` — test files
+- `conftest.py` — shared fixtures
