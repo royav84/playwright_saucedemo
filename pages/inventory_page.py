@@ -26,3 +26,7 @@ class InventoryPage:
     
     def select_filter_option(self, option_text):
         self.page.select_option("[data-test='product-sort-container']", label=option_text)
+
+    def go_to_cart(self):
+        self.page.locator("[data-test='shopping-cart-link']").click()
+        
