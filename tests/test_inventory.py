@@ -55,3 +55,12 @@ def test_add_all_items_to_cart_updates_badge_to_six(page):
     inventory_page = InventoryPage(page)
     inventory_page.add_all_items_to_cart()
     assert inventory_page.get_cart_count() == "6"
+
+def test_remove_item_from_cart_updates_badge(page):
+    login_page = LoginPage(page)
+    login_page.navigate()
+    login_page.login("standard_user", "secret_sauce")
+    inventory_page = InventoryPage(page)
+    inventory_page.add_all_items_to_cart()
+    inventory_page.remove_item_from_cart("sauce-labs-backpack")
+    assert inventory_page.get_cart_count() == "5"

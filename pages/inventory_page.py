@@ -31,6 +31,8 @@ class InventoryPage:
         self.page.locator("[data-test='shopping-cart-link']").click()
 
     def add_all_items_to_cart(self):
-        buttons = self.page.locator("[data-test^='add-to-cart']").all()
-        for button in buttons:
-            button.click()
+        for _ in range(6):
+            self.page.locator("[data-test^='add-to-cart']").first.click()
+
+    def remove_item_from_cart(self, product_name):
+        self.page.locator(f"[data-test='remove-{product_name}']").click()
