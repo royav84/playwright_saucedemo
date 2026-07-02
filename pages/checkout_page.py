@@ -16,3 +16,9 @@ class CheckoutPage:
 
     def get_error_message(self):
         return self.page.locator("[data-test='error']").inner_text()
+
+    def click_finish(self):
+        self.page.locator("[data-test='finish']").click()
+
+    def get_checkout_complete_header(self):
+        return self.page.locator("[data-test='complete-header']").inner_text()
