@@ -103,3 +103,26 @@ def test_checkout_complete_header_text(page):
     checkout_page.click_continue()
     checkout_page.click_finish()
     assert checkout_page.get_checkout_complete_header() == "Thank you for your order!"
+
+def test_checkout_summary_calculations(page):
+    login_page = LoginPage(page)
+    login_page.navigate()
+    login_page.login("standard_user", "secret_sauce")
+    inventory_page = InventoryPage(page)
+    inventory_page.click_add_to_cart_button("sauce-labs-backpack")
+    inventory_page.click_add_to_cart_button("sauce-labs-bike-light")
+    inventory_page.go_to_cart()
+    cart_page = CartPage(page)
+    cart_page.go_to_checkout()  
+    checkout_page = CheckoutPage(page)
+    checkout_page.fill_first_name("John")
+    checkout_page.fill_last_name("Doe")
+    checkout_page.fill_postal_code("12345")
+    checkout_page.click_continue()
+    subtotal_text = checkout_page.get_subtotal()
+    tax_text = checkout_page.get_tax()
+    total_text = checkout_page.get_total()  
+    subtotal = float(subtotal_text.split("$")[1])
+    tax = float(tax_text.split("$")[1])
+    total = float(total_text.split("$")[1])
+    assert subtotal + tax == total

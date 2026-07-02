@@ -22,3 +22,12 @@ class CheckoutPage:
 
     def get_checkout_complete_header(self):
         return self.page.locator("[data-test='complete-header']").inner_text()
+    
+    def get_subtotal(self):
+        return self.page.locator("[data-test='subtotal-label']").inner_text()
+    
+    def get_tax(self):
+        return self.page.locator("[data-test='tax-label']").inner_text()
+    
+    def get_total(self):
+        return self.page.locator("[data-test='total-label']").inner_text()
