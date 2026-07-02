@@ -47,3 +47,11 @@ def test_product_list_order_is_z_to_a_after_filter(page):
     inventory_page.select_filter_option("Name (Z to A)")
     product_list = inventory_page.get_product_list()
     assert product_list == sorted(product_list, reverse=True)
+
+def test_add_all_items_to_cart_updates_badge_to_six(page):
+    login_page = LoginPage(page)
+    login_page.navigate()
+    login_page.login("standard_user", "secret_sauce")
+    inventory_page = InventoryPage(page)
+    inventory_page.add_all_items_to_cart()
+    assert inventory_page.get_cart_count() == "6"
