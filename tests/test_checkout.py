@@ -125,4 +125,4 @@ def test_checkout_summary_calculations(page):
     subtotal = float(subtotal_text.split("$")[1])
     tax = float(tax_text.split("$")[1])
     total = float(total_text.split("$")[1])
-    assert subtotal + tax == total
+    assert round(subtotal + tax, 2) == total
