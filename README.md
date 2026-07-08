@@ -8,9 +8,10 @@ Senior QA Engineer with 13+ years of experience. This repo contains UI automatio
 ## What's covered
 
 - Login flow — valid login, invalid credentials, locked out user
-- Inventory page — title, product count, filter visibility
-- Add to cart — cart badge validation
-- Product sorting — A to Z, Z to A filter validation
+- Inventory page — title, product count, filter visibility, sorting (A-Z, Z-A)
+- Cart — add single item, add all items, remove item, badge validation
+- Checkout — form validation, missing fields, price calculation, order confirmation
+- CI/CD — GitHub Actions pipeline runs all tests on every push
 
 ## Tech stack
 
