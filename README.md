@@ -1,3 +1,6 @@
+[![Playwright Tests](https://github.com/royav84/playwright_saucedemo/actions/workflows/tests.yml/badge.svg)](https://github.com/royav84/playwright_saucedemo/actions/workflows/tests.yml)
+
+
 # Playwright Saucedemo — QA Automation Portfolio
 
 Senior QA Engineer with 13+ years of experience. This repo contains UI automation tests built with Playwright and pytest against saucedemo.com.
