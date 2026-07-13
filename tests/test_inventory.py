@@ -38,3 +38,4 @@ def test_remove_item_from_cart_updates_badge(logged_in_page):
     inventory_page.add_all_items_to_cart()
     inventory_page.remove_item_from_cart("sauce-labs-backpack")
     assert inventory_page.get_cart_count() == "5"
+
